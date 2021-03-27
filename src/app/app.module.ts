@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { UserListComponent } from './page/user-list/user-list.component';
+import { SortPipe } from './pipe/sort.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    UserListComponent
+    UserListComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

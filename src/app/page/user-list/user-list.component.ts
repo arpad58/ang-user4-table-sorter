@@ -13,11 +13,24 @@ export class UserListComponent implements OnInit {
   /*table*/
   userList$: Observable<User[]> = this.userService.getAll();
 
+  direction: number = 1;
+  columnKey: string = '';
+
                /*table                       */
   constructor(private userService: UserService) { }
 
 
   ngOnInit(): void {
+  }
+
+  /* sorter */
+  onColumnSelect(key: string): void {
+    if (this.columnKey === key) {
+      this.direction = this.direction * -1;
+    } else {
+      this.direction = 1;
+    }
+    this.columnKey = key;
   }
 
 }
