@@ -7,7 +7,7 @@
       <h2>User List</h2>
       <table class="table">
         <thead>
-          <tr>
+          <tr>   <!--    sorter            --> <!-- table -->
             <th (click)="onColumnSelect('id')">#</th>
             <th (click)="onColumnSelect('name')">Name</th>
             <th (click)="onColumnSelect('email')">Email</th>
@@ -16,13 +16,13 @@
           </tr>
         </thead>
         <tbody>
-              <!--    table                     -->
+              <!--    table                     --> <!--    sorter          -->
           <tr *ngFor="let user of userList$ | async | sort: columnKey:direction">
-            <td>{{ user.id }}</td>
-            <td>{{ user.name }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.address }}</td> 
-            <td>{{ user.active }}</td>
+            <td>{{ user.id }}</td>        <!-- table -->
+            <td>{{ user.name }}</td>      <!-- table -->
+            <td>{{ user.email }}</td>     <!-- table -->
+            <td>{{ user.address }}</td>   <!-- table -->
+            <td>{{ user.active }}</td>    <!-- table -->
           </tr>
 
         </tbody>

@@ -13,6 +13,7 @@ export class UserListComponent implements OnInit {
   /*table*/
   userList$: Observable<User[]> = this.userService.getAll();
 
+  /* sorter */
   direction: number = 1;
   columnKey: string = '';
 
@@ -26,9 +27,9 @@ export class UserListComponent implements OnInit {
   /* sorter */
   onColumnSelect(key: string): void {
     if (this.columnKey === key) {
-      this.direction = this.direction * -1;
-    } else {
-      this.direction = 1;
+      this.direction = this.direction * -1;     /* -1 esetén  */               /*  1 esetén  */                                /*  1 esetén  */
+    } else {                  /* NÖVEKVŐbe és CSÖKKENŐbe is rendez*/  /* NÖVEKVŐbe rendez 1-től felfelé a-tól z-ig */  /* CSÖKKENŐbe rendez pl.100 -tól lefelé, z-től a-ig */
+      this.direction = 1;                      /*  1 esetén  */               /*  1 esetén  */                                /*  -1 esetén  */
     }
     this.columnKey = key;
   }
